@@ -261,7 +261,7 @@
     width: 266px;
     height: 125px;
 
-    background-image: url('/images/decor.png');
+    background-image: url('../images/decor.png');
     background-repeat: no-repeat;
     -webkit-background-size: cover;
             background-size: cover;
@@ -386,7 +386,7 @@
         width: 220px;
         height: 175px;
 
-        background-image: url('/images/decor-mobile.png');
+        background-image: url('../images/decor-mobile.png');
     }
     .personal-info__name
     {
