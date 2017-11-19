@@ -17,8 +17,9 @@
             Я их разделил и все фоны решил лениво загружать. На мой взгял нужно сразу позволить пользователю знакомиться с сайтом, слишком долгая загрузка
             сильно уменьшает аудиторию.
             <br>
+            Обычно я делаю спрайт или шрифт с svg, в макете для многих элементов просто картинки.<br>
             Вобщем, мне сложно заниматься плохо спроектированным делом, даже если это тестовое задание ;-P<br>
-            А так тут Бэм, привязка размеров к корню html с font-size: 1vw, у елементов rem, можно все контролировать с помощью break points.<br>
+            А так тут Бэм, привязка размеров к корню html с font-size: 1vw, у елементов rem, можно все контролировать с помощью break points. Вместо картиночных градиентов используется нормальный<br>
             Для вывода видео можно использовать mediaelement. <br>
             И на мой взгляд, не нужно просить пользователей переворачивать девайс, у многих может стоять <br>
             блокировка сменеы ориентации, это может раздражать, сейчас на сайте не закрыть видео, пока не перевернешь экран.
@@ -27,12 +28,12 @@
         <div class="section section--target">
           <div class="section__backgrounds">
             <picture>
-              <source media="(max-width: 1024px)" data-srcset="../../images/back-mobile.png">
-              <img class="background background--back lazyload" data-src="../../images/back.png">
+              <source media="(max-width: 1024px)" data-srcset="./images/back-mobile.png">
+              <img class="background background--back lazyload" data-src="./images/back.png">
             </picture>
-            <img class="background background--dude lazyload" data-src="../../images/dude.png">
+            <img class="background background--dude lazyload" data-src="./images/dude.png">
 
-            <img class="background background--name lazyload" data-src="../../images/name.png">
+            <img class="background background--name lazyload" data-src="./images/name.png">
 
           </div>
           <div class="section__content">
