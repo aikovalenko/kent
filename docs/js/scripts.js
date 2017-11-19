@@ -96,7 +96,8 @@ $(document).ready(function() {
 
     $(document).ready(function() {
         $('#fullpage').fullpage({
-            anchors: ['firstPage', 'secondPage']
+            anchors: ['firstPage', 'secondPage'],
+            lazyLoading: false
         });
     });
 
