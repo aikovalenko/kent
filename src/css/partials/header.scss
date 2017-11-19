@@ -1,0 +1,212 @@
+.header {
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  padding: 0 100px;
+
+  z-index: 99;
+  box-sizing: border-box;
+
+  &__logo {
+    padding-top: 8px;
+  }
+
+  &__menu {
+
+    &__list {
+
+    }
+
+    &__burger {
+      cursor: pointer;
+      display: none;
+    }
+  }
+}
+
+.navigation {
+
+  &__list {
+    display: flex;
+    height: 16px;
+    box-sizing: border-box;
+
+    &__item {
+      position: relative;
+      margin: 0 25px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &--personal-info {
+        margin-left: 177px;
+
+
+      }
+
+      &__link {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 14px;
+
+        &--bolder {
+          font-weight: 600;
+        }
+      }
+      &__stage {
+        line-height: 26px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 800;
+        letter-spacing: .5px;
+      }
+    }
+  }
+
+  &--close {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 25px;
+  }
+}
+
+.personal-info {
+  position: absolute;
+  left: -177px;
+  top: -26px;
+  width: 266px;
+  height: 125px;
+
+  background-image: url('/images/decor.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: -1;
+
+  &__name {
+    position: absolute;
+    right: 109px;
+    top: 27px;
+    line-height: 16px;
+    letter-spacing: .5px;
+    color: $primary-color;
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  &__score {
+    position: absolute;
+    right: 109px;
+    top: 60px;
+    font-size: 34px;
+    font-weight: 300;
+    color: $secondary-color;
+  }
+
+}
+
+
+@media screen and (max-width: em(1024px, 16px)) {
+  .header {
+    padding: 0 20px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.69) 0%, rgba(0, 0, 0, 0.38) 55%, rgba(0, 0, 0, 0.16) 76%, rgba(0, 0, 0, 0.01) 96%, rgba(0, 0, 0, 0.01) 100%);
+
+    &__logo {
+      padding-top: 0;
+    }
+
+    &__menu {
+
+      &__burger {
+        display: block;
+      }
+
+      &__list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, .8);
+
+        display: none;
+
+        &.open {
+          display: block;
+        }
+      }
+    }
+  }
+  .navigation {
+    height: 100%;
+
+    &__list {
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      padding-top: 60px;
+      padding-bottom: 70px;
+
+
+      &__item {
+        margin: 0;
+
+        &--personal-info {
+          margin-left: 0;
+          margin-bottom: 30px;
+
+        }
+        &__link {
+          font-size: 20px;
+        }
+        &__stage {
+          float: right;
+          font-size: 10px;
+          line-height: 16px;
+        }
+      }
+    }
+
+    &--close {
+      display: block;
+    }
+  }
+
+  .personal-info {
+    left: -44px;
+    top: -41px;
+    width: 220px;
+    height: 175px;
+    background-image: url('/images/decor-mobile.png');
+
+
+    &__name {
+      right: 85px;
+      top: 70px;
+      font-size: 12px;
+    }
+
+    &__score {
+      position: absolute;
+      right: 85px;
+      top: 105px;
+      font-size: 30px;
+      font-weight: 300;
+      color: $secondary-color;
+    }
+  }
+}

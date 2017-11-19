@@ -1,0 +1,9 @@
+// Em calculate function
+@function em($pixels, $context: $font-size-base) {
+	@return #{ceil($pixels / $context * 100) / 100}em
+}
+// Rem calculate function
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}

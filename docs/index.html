@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Kent</title>
+      <link rel='stylesheet' href='css/libs.css'>
+      <link rel='stylesheet' href='css/style.css'>
+  </head>
+
+  <body>
+
+  <header class="header">
+      <div class="header__logo">
+          <img src="../images/logo.png">
+      </div>
+
+      <div class="header__menu">
+          <div class="header__menu__burger js-nav-open"><img width="25" src="../images/burger.svg"></div>
+          <div class="header__menu__list">
+              <div class="navigation--close close js-nav-close"></div>
+              <nav class="navigation">
+                  <ul class="navigation__list">
+                      <li class="navigation__list__item"><a class="navigation__list__item__link" href="#" title="">Unlock the city</a></li>
+                      <li class="navigation__list__item navigation__list__item--personal-info">
+                          <div class="personal-info">
+                              <div class="personal-info__name">Митя<br>Николаев</div>
+                              <div class="personal-info__score">125</div>
+                          </div>
+                          <a class="navigation__list__item__link navigation__list__item__link--bolder" href="#" title="">Changespiration</a><br>
+                          <a class="navigation__list__item__stage" href="#" title="">Этап 3</a>
+
+                      </li>
+                      <li class="navigation__list__item"><a class="navigation__list__item__link" href="#" title="">Fashion</a></li>
+                      <li class="navigation__list__item"><a class="navigation__list__item__link" href="#" title="">Product</a></li>
+                      <li class="navigation__list__item"><a class="navigation__list__item__link" href="#" title="">Profile</a></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header>
+
+    <main>
+      <div id="fullpage">
+        <!--<div class="section section&#45;&#45;intro">Some section</div>-->
+        <div class="section section--target">
+          <div class="section__backgrounds">
+            <picture>
+              <source media="(max-width: 1024px)" srcset="../images/back.png">
+              <img class="background background--dude" data-src="../images/dude.png">
+            </picture>
+
+            <img class="background background--back" data-src="../images/back.png">
+            <img class="background background--name" data-src="../images/name.png">
+
+          </div>
+          <div class="section__content">
+
+            <ul class="stages">
+              <li>
+                <div class="stages__name">этап 1 — дизайн</div>
+                <a class="stages__link" href="#" title=""><span class="icon"><</span><span class="stages__link__text">Катя Добрякова</span></a>
+              </li>
+              <li>
+                <div class="stages__name">этап 2 — музыка</div>
+                <a class="stages__link" href="#" title=""><span class="icon"><</span><span class="stages__link__text">Mujмuice</span></a>
+              </li>
+            </ul>
+
+            <div class="description">
+              <div class="description__stage">этап 3 — стартап</div>
+              <div class="description__name">Данила</div>
+              <div class="description__surname">Антоновский</div>
+              <p class="description__text">Смотри видео и читай статьи, чтобы узнать больше о тонкостях создания стартапов и успешно выполнить задания!
+                Победителей ждут персональная встреча с Данилой Антоновским и другие призы!
+              </p>
+            </div>
+
+            <div class="about">
+              <div class="about__text">
+                Известный российский предприниматель, умеющий превращать хобби в стартап, а стартап в бизнес благодаря опыту и чутью на тренды.
+              </div>
+              <div class="about__person js-about">
+                <div class="about__person__name">данила Антоновский</div>
+                <div class="about__person__rang">бизнесмен</div>
+                <span>стрелка</span>
+              </div>
+            </div>
+
+            <div class="play">
+              <div class="play__background"></div>
+              <div class="play__text">Смотреть видео</div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <ul class="navigation-dots">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+      </ul>
+    </main>
+
+  <footer class="footer">
+      <div class="footer__rules"><a href="#" title="">Правила участия</a> и <a href="#" title="">вопросы-ответы</a></div>
+      <div class="footer__disclaimer">ВЫ НАХОДИТЕСЬ НА ОФИЦИАЛЬНОМ САЙТЕ KENT</div>
+  </footer>
+
+  <script src='js/libs.js'></script>
+  <script src='js/scripts.js'></script>
+  </body>
+</html>

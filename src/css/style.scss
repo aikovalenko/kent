@@ -1,0 +1,341 @@
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/placeholders";
+
+
+@import "partials/fonts";
+@import "partials/header";
+@import "partials/footer";
+@import "partials/footer";
+
+
+
+@include fontFace('Panton','../fonts/Panton-Light', 300);
+@include fontFace('Panton','../fonts/Panton-Regular', 400);
+@include fontFace('Panton','../fonts/Panton-SemiBold', 600);
+@include fontFace('Panton','../fonts/Panton-Bold', 800);
+
+
+
+html {
+  font-size: 1vw;
+  font-family: 'Panton', Arial, sans-serif;
+}
+
+body {
+  min-width: 320px;
+  @include fontSize(14px);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.section--target {
+  background-image: linear-gradient(0deg, rgba(97, 106, 206, 223), #6f79eb 0.2%, #717ce9 26.7%, #6f7de9 26.7%, #7383e9 32.5%, #7285ea 32.5%, #778fe8 39.3%, #7891e7 39.3%, #83afe5 54%, #81b0e3 54%, #81b0e3 54.2%, #84b0e4 54.2%, #84b0e4 54.5%, #82b1e4 54.5%, #8bc5e2 64.3%, #89c6e1 64.3%, #8cc9e2 66.9%, #8ccbe1 66.9%, #8ed3e1 71.3%, #90d2e1 71.6%, #94dcdf 78.3%, #92dddf 78.3%)
+}
+
+.section {
+
+  &__backgrounds {
+    position: relative;
+    height: 100%;
+    z-index: 1;
+  }
+  &__content {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 90px;
+    box-sizing: border-box;
+  }
+}
+
+.background {
+  position: absolute;
+  top: 0;
+
+  &--back {
+    left: 0;
+    height: 100%;
+    z-index: 3;
+  }
+  &--dude {
+    right: 2%;
+    height: 100%;
+    z-index: 2;
+  }
+  &--name {
+    height: 43.5vh;
+    right: 0;
+    top: 11%;
+    z-index: 1;
+  }
+}
+
+.stages {
+  width: 160px;
+  margin-left: 65px;
+
+  text-transform: uppercase;
+  color: #268cbc;
+  letter-spacing: .2px;
+
+  li {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__name {
+    font-weight: 300;
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 800;
+    text-decoration: none;
+    &:hover {
+      color: #9af0e1;
+    }
+
+    &:before {
+      display: block;
+      font-weight: 400;
+      position: absolute;
+      left: -8px;
+      font-family: 'Panton', Arial, sans-serif;
+    }
+
+    &__text {
+      text-decoration: underline;
+    }
+  }
+}
+
+.description {
+  position: absolute;
+
+  bottom: calculateRem(140px);
+  left: calculateRem(100px);
+
+  max-width: calculateRem(430px);
+
+  color: #fff;
+  font-weight: 300;
+
+  &__stage {
+    margin-bottom: calculateRem(10px);
+    font-size: calculateRem(19px);
+    text-transform: uppercase;
+  }
+  &__name {
+    font-size: calculateRem(72px);
+    text-transform: uppercase;
+    color: #9af0e1;
+  }
+  &__surname {
+    font-size: calculateRem(48px);
+    text-transform: uppercase;
+    margin-bottom: calculateRem(10px);
+    color: #9af0e1;
+  }
+
+  &__text {
+    line-height: calculateRem(24px);
+    font-size: calculateRem(14px);
+  }
+}
+
+
+.navigation-dots {
+  position: absolute;
+  right: calculateRem(90px);
+  top: 150px;
+
+  font-size: 0;
+
+  a {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 30px;
+    background-color: #48a4d0;
+    border-radius: 50%;
+    transition: $transition;
+
+    &:hover {
+      transform: scale(1.5);
+      background-color: #fff;
+      transition: $transition;
+    }
+  }
+
+  .active {
+    a {
+      transform: scale(1.5);
+      background-color: #fff;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 5px;
+    height: 1000px;
+    border-right: 1px solid #6ca7cc;
+  }
+}
+
+.about {
+  position: absolute;
+  right: calculateRem(96px);
+  bottom: 0;
+  width: calculateRem(406px);
+  padding-top: calculateRem(80px);
+  padding-bottom: calculateRem(85px);
+  padding-left: calculateRem(50px);
+  padding-right: calculateRem(70px);
+
+  line-height: calculateRem(26px);
+  letter-spacing: .2px;
+
+  box-sizing: border-box;
+  font-weight: 300;
+  color: #fff;
+  &__person {
+    position: relative;
+    margin-top: calculateRem(10px);
+    cursor: pointer;
+
+    &__name {
+      color: #9af0e1;
+      text-transform: uppercase;
+      font-size: calculateRem(24px);
+    }
+
+    span {
+      position: absolute;
+      left: 100%;
+      top: 0;
+    }
+  }
+
+  &__text {
+    display: none;
+  }
+  &.open {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, 0.01) 1%, rgba(37, 105, 168, 0.39) 41%, rgba(37, 109, 167, 0.62) 61%, rgba(38, 111, 168, 0.82) 81%, rgba(39, 113, 168, 0.92) 100%);
+
+    .about__text {
+      display: block;
+    }
+  }
+}
+
+
+.close {
+  //display: inline-block;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    &::before, &::after {
+
+    }
+  }
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #fff;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+}
+
+.play {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 50%;
+  bottom: calculateRem(80px);
+  margin-left: calculateRem(-163px);
+  text-align: center;
+  cursor: pointer;
+
+  width: calculateRem(326px);
+  height: calculateRem(215px);
+  background-image: url('../images/play.png');
+  background-repeat: none;
+  background-size: cover;
+
+  &:hover {
+    background-image: url('../images/play-hover.png');
+
+    .play__text {
+      color: $blue;
+    }
+  }
+
+  &__text {
+    font-weight: 800;
+    color: #fff;
+    font-size: calculateRem(16px);
+    letter-spacing: .2px;
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-width: em(1024px, 16px)) {
+  html {
+    font-size: 1.4vw;
+  }
+  .description {
+    left: calculateRem(25px);
+  }
+  .stages {
+    margin-left: 25px;
+  }
+
+  .play {
+    bottom: calculateRem(300px);
+  }
+}
+
+@media screen and (max-height: em(705px, 16px)) {
+  .description {
+    bottom: 80px;
+  }
+
+}
