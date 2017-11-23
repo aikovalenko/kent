@@ -427,6 +427,12 @@ a
 
     opacity: 1;
 }
+.about.open .icon-arrow
+{
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
 .about--call
 {
     position: absolute;

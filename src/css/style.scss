@@ -294,6 +294,9 @@ a {
       transform: translateY(0);
       transition: all .4s ease;
     }
+    .icon-arrow {
+      transform: rotate(180deg);
+    }
   }
 
   &--call {
