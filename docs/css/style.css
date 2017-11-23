@@ -339,6 +339,9 @@ a
     padding-bottom: 5.3125rem;
     padding-left: 3.125rem;
 
+    -webkit-transition: background-image .4s ease;
+         -o-transition: background-image .4s ease;
+            transition: background-image .4s ease; 
     letter-spacing: .2px;
 
     color: #fff;
@@ -362,23 +365,67 @@ a
 .about__person span
 {
     position: absolute;
-    top: 0; 
+    top: .625rem;
     left: 100%;
+
+    margin-left: 5px;
 }
 .about__text
 {
-    display: none;
+    visibility: hidden;
+
+    -webkit-transition: all .4s ease;
+         -o-transition: all .4s ease;
+            transition: all .4s ease; 
+    -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+            transform: translateY(30px);
+
+    opacity: 0;
 }
-.about.open
+.about:after
 {
+    position: absolute;
+    z-index: -1; 
+    top: 0;
+    left: 0;
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+    -webkit-transition: all .4s ease;
+         -o-transition: all .4s ease;
+            transition: all .4s ease;
+
+    opacity: 0;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 255, 0)), color-stop(1%, rgba(0, 0, 255, .01)), color-stop(41%, rgba(37, 105, 168, .39)), color-stop(61%, rgba(37, 109, 167, .62)), color-stop(81%, rgba(38, 111, 168, .82)), to(rgba(39, 113, 168, .92)));
     background-image: -webkit-linear-gradient(top, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, .01) 1%, rgba(37, 105, 168, .39) 41%, rgba(37, 109, 167, .62) 61%, rgba(38, 111, 168, .82) 81%, rgba(39, 113, 168, .92) 100%);
     background-image:      -o-linear-gradient(top, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, .01) 1%, rgba(37, 105, 168, .39) 41%, rgba(37, 109, 167, .62) 61%, rgba(38, 111, 168, .82) 81%, rgba(39, 113, 168, .92) 100%);
     background-image:         linear-gradient(to bottom, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, .01) 1%, rgba(37, 105, 168, .39) 41%, rgba(37, 109, 167, .62) 61%, rgba(38, 111, 168, .82) 81%, rgba(39, 113, 168, .92) 100%);
 }
+.about.open:after
+{
+    -webkit-transition: all .4s ease;
+         -o-transition: all .4s ease;
+            transition: all .4s ease; 
+
+    opacity: 1;
+}
 .about.open .about__text
 {
-    display: block;
+    visibility: visible;
+
+    -webkit-transition: all .4s ease;
+         -o-transition: all .4s ease;
+            transition: all .4s ease; 
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+
+    opacity: 1;
 }
 .about--call
 {
@@ -624,6 +671,16 @@ a
             transition: all .3s ease; 
 
     opacity: 1;
+}
+
+.icon-arrow
+{
+    width: 2.5rem;
+    height: .875rem;
+
+    background-image: url('../images/icon-arrow.png');
+    -webkit-background-size: cover;
+            background-size: cover;
 }
 
 .header

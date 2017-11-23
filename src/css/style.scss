@@ -6,10 +6,6 @@
 
 
 
-
-
-
-
 @include fontFace('Panton','../fonts/Panton-Light', 300);
 @include fontFace('Panton','../fonts/Panton-Regular', 400);
 @include fontFace('Panton','../fonts/Panton-SemiBold', 600);
@@ -245,6 +241,8 @@ a {
   box-sizing: border-box;
   font-weight: 300;
   color: #fff;
+  transition: background-image .4s ease;
+
   &__person {
     position: relative;
     margin-top: calculateRem(10px);
@@ -259,18 +257,42 @@ a {
     span {
       position: absolute;
       left: 100%;
-      top: 0;
+      top: calculateRem(10px);
+      margin-left: 5px;
     }
   }
 
   &__text {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all .4s ease;
+  }
+
+  &:after {
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, 0.01) 1%, rgba(37, 105, 168, 0.39) 41%, rgba(37, 109, 167, 0.62) 61%, rgba(38, 111, 168, 0.82) 81%, rgba(39, 113, 168, 0.92) 100%);
+    opacity: 0;
+    transition: all .4s ease;
+    z-index: -1;
   }
   &.open {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0) 0%, rgba(0, 0, 255, 0.01) 1%, rgba(37, 105, 168, 0.39) 41%, rgba(37, 109, 167, 0.62) 61%, rgba(38, 111, 168, 0.82) 81%, rgba(39, 113, 168, 0.92) 100%);
+    &:after {
+      opacity: 1;
+      transition: all .4s ease;
+    }
 
     .about__text {
-      display: block;
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all .4s ease;
     }
   }
 
@@ -342,7 +364,6 @@ a {
 }
 
 .close {
-  //display: inline-block;
   position: absolute;
   top: 50px;
   right: 25px;
@@ -433,8 +454,6 @@ a {
 }
 
 .video-popup {
-  //display: flex;
-  //align-items: center;
 
   &__turn {
     position: absolute;
@@ -461,6 +480,13 @@ a {
       transition: all .3s ease;
     }
   }
+}
+
+.icon-arrow {
+  width: calculateRem(40px);
+  height: calculateRem(14px);
+  background-image: url("../images/icon-arrow.png");
+  background-size: cover;
 }
 
 @import "partials/header";
