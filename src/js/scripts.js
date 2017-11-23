@@ -94,16 +94,10 @@ $(document).ready(function() {
     htmlTag.className += (' ' + platform.name.toLowerCase() + ' ' + platform.os.family.toLowerCase());
 
 
-    $(document).ready(function() {
-        $('#fullpage').fullpage({
-            anchors: ['firstPage', 'secondPage'],
-            lazyLoading: false
-        });
+    $('#fullpage').fullpage({
+        anchors: ['firstPage', 'secondPage'],
+        lazyLoading: false
     });
-
-
-
-
 
 
 
@@ -113,22 +107,49 @@ $(document).ready(function() {
         $('.about').removeClass('open');
     });
 
-    $('.js-nav-open').click(function() {
-        $('.header__menu__list').addClass('open');
+
+    $('.js-modal').click(function() {
+        var modalName = $(this).attr('data-call-modal');
+        $('[data-modal=' + modalName + ']').addClass('open');
     });
-    $('.js-nav-close').click(function() {
-        $('.header__menu__list').removeClass('open');
+    $('.js-modal-close').click(function() {
+        var modalName = $(this).attr('data-close-modal');
+        $('[data-modal=' + modalName + ']').removeClass('open');
     });
 
 
+    var firstClick = false,
+        video = $('video');
+    $('[data-call-modal="video"]').click(function() {
+        firstClick = true;
+        video.mediaelementplayer({
+            // features: [],
+            success: function(player, node) {
+                if(window.innerHeight > window.innerWidth){
+                    $('.video-popup__turn').addClass('show');
+                    setTimeout(function () {
+                        player.play();
+                        $('.video-popup__turn').removeClass('show');
+                    }, 2000);
+                } else player.play();
 
+                player.addEventListener('ended', function(e){
+                    setTimeout(function(){
+                        $('[data-modal="video"]').removeClass('open');
+                    }, 500);
 
-    //правильный пересчет функций на ресайз
-    var resizeFn = debounce(function() {
+                });
+            }
+        });
 
-    }, 300);
+        if (firstClick = true) {
+            video[0].player.play();
+        }
+    });
+    $('[data-close-modal="video"]').click(function() {
+        video[0].player.pause();
+    });
 
-    $(window).on("resize", resizeFn);
 
 });
 

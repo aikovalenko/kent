@@ -1,0 +1,133 @@
+@media screen and (max-width: em(1023px, 16px)) {
+  html {
+    font-size: 1.4vw;
+  }
+  .description {
+    left: calculateRem(25px);
+  }
+  .stages {
+    margin-left: 25px;
+  }
+
+  .background--name {
+    display: none;
+  }
+  .background--dude {
+    height: 70vw;
+  }
+
+  .play {
+    bottom: calculateRem(400px);
+  }
+
+  .about {
+
+    &--call {
+      bottom: calculateRem(400px);
+    }
+  }
+}
+@media screen and (max-width: em(800px, 16px)) {
+  html {
+    font-size: 2.4vw;
+  }
+
+  .background--back {
+    height: auto;
+    top: -90px;
+    left: -619px;
+  }
+
+  .background--dude {
+    //top: 50px;
+    right: -40px;
+    height: 90vw;
+  }
+  .description {
+    bottom: 4.75rem;
+    font-weight: 400;
+  }
+
+  .navigation-dots {
+    display: none;
+  }
+
+  .info {
+    right: 0;
+    bottom: 35px;
+    width: 100%;
+    text-align: center;
+
+    font-size: calculateRem(14px);
+    &__rules {
+      text-transform: uppercase;
+    }
+    &__period {
+      display: block;
+      margin-bottom: calculateRem(7px);
+    }
+  }
+  .about {
+    display: none;
+
+    &--call {
+      display: block;
+    }
+  }
+}
+
+
+@media screen and (max-height: em(705px, 16px)) {
+  .description {
+    bottom: 80px;
+  }
+
+}
+
+@media screen and (max-width: em(600px, 16px)) {
+  html {
+    font-size: 3.4vw;
+  }
+  .background--dude {
+    top: 50px;
+    right: -40px;
+    height: 90vw;
+  }
+
+  .play {
+    bottom: calculateRem(400px);
+    left: 55%;
+  }
+  .about {
+
+    &--call {
+      right: 10%;
+    }
+  }
+
+}
+
+@media screen and (max-width: em(460px, 16px)) {
+  .background--back {
+    top: -170px;
+  }
+  .about {
+
+    &--call {
+      right: 5%;
+    }
+  }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+  .navigation__list {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: em(700px, 16px)) and (orientation:landscape) {
+  html {
+    font-size: 1.4vw;
+  }
+}

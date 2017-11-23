@@ -4,9 +4,9 @@
 @import "helpers/placeholders";
 
 
-@import "partials/header";
-@import "partials/footer";
-@import "partials/footer";
+
+
+
 
 
 
@@ -46,6 +46,28 @@ a {
   color: inherit;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.animation--fading {
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  transition: all .3s ease;
+
+  &.open {
+    visibility: visible;
+    z-index: 99999;
+    opacity: 1;
+    transition: all .3s ease;
+  }
+}
 
 
 .section--target {
@@ -53,6 +75,8 @@ a {
 }
 
 .section {
+
+  overflow: hidden;
 
   &__backgrounds {
     position: relative;
@@ -249,15 +273,86 @@ a {
       display: block;
     }
   }
+
+  &--call {
+    display: none;
+    position: absolute;
+    bottom: calculateRem(300px);
+    right: 20%;
+    width: 100px;
+    height: 58px;
+    background-image: url('../images/decor-2.png');
+    background-size: cover;
+    cursor: pointer;
+    z-index: 3;
+
+    &__info {
+      top: 17px;
+      left: 50%;
+      margin-left: -12px;
+      position: absolute;
+
+    }
+  }
 }
 
+.about-popup {
+
+
+  display: flex;
+  align-items: center;
+
+  &__close {
+
+  }
+
+  &__inner {
+    display: flex;
+    padding: 0 calculateRem(60px);
+    color: #fff;
+    margin-top: -70px;
+
+    &__icon {
+      padding-right: 15px;
+    }
+
+    &__desc {
+      margin-top: -6px;
+
+      &__name {
+        margin-bottom: calculateRem(15px);
+        font-size: calculateRem(30px);
+        color: #9af0e1;
+        text-transform: uppercase;
+      }
+      &__rang {
+        margin-bottom: calculateRem(15px);
+        font-size: calculateRem(20px);
+        font-weight: 600;
+
+      }
+      &__text {
+        font-size: calculateRem(20px);
+        font-weight: 300;
+      }
+    }
+
+
+  }
+}
 
 .close {
   //display: inline-block;
+  position: absolute;
+  top: 50px;
+  right: 25px;
+
   width: 40px;
   height: 40px;
   overflow: hidden;
   cursor: pointer;
+  z-index: 9;
+
   &:hover {
     &::before, &::after {
 
@@ -298,6 +393,7 @@ a {
   background-image: url('../images/play.png');
   background-repeat: none;
   background-size: cover;
+  z-index: 1;
 
   &:hover {
     background-image: url('../images/play-hover.png');
@@ -316,25 +412,57 @@ a {
   }
 }
 
-@media screen and (max-width: em(1024px, 16px)) {
-  html {
-    font-size: 1.4vw;
-  }
-  .description {
-    left: calculateRem(25px);
-  }
-  .stages {
-    margin-left: 25px;
+.info {
+  position: absolute;
+  right: 150px;
+  bottom: 40px;
+  font-size: 10px;
+  font-weight: 300;
+
+  &__rules {
+    color: #9af0e1;
+    a {
+      text-decoration: underline;
+    }
   }
 
-  .play {
-    bottom: calculateRem(300px);
+  &__period {
+    display: none;
+    color: #fff;
   }
 }
 
-@media screen and (max-height: em(705px, 16px)) {
-  .description {
-    bottom: 80px;
-  }
+.video-popup {
+  //display: flex;
+  //align-items: center;
 
+  &__turn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+
+    transition: all .3s ease;
+
+    &.show {
+      visibility: visible;
+      opacity: 1;
+      z-index: 9;
+      transition: all .3s ease;
+    }
+  }
 }
+
+@import "partials/header";
+@import "partials/footer";
+@import "partials/medias";

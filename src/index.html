@@ -9,28 +9,19 @@
 
     <main>
       <div id="fullpage">
-        <div class="section section--intro" style="background-color: #00aced;">
-          <p style="max-width: 700px;">
-
-            Я разделил фоны от контента и фоны решил лениво загружать. На мой взляд нужно сразу позволить пользователю знакомиться с сайтом, слишком долгая загрузка
-            сильно уменьшает аудиторию.
-            <br>
-            Обычно я делаю спрайт или шрифт с svg, в макете для многих элементов просто картинки.<br>
-            А так тут Бэм, привязка размеров к корню html с font-size: 1vw, у елементов rem, можно все контролировать с помощью break points. Вместо картиночных градиентов используется нормальный<br>
-            Для вывода видео можно использовать mediaelement. <br>
-            И на мой взгляд, не нужно просить пользователей переворачивать девайс, у многих может стоять <br>
-            блокировка сменеы ориентации, это может раздражать, сейчас на сайте не закрыть видео, пока не перевернешь экран.
-          </p>
-        </div>
+        <!--<div class="section section&#45;&#45;intro" style="background-color: #00aced;"></div>-->
         <div class="section section--target">
           <div class="section__backgrounds">
             <picture>
-              <source media="(max-width: 1024px)" data-srcset="./images/back-mobile.png">
-              <img class="background background--back lazyload" data-src="./images/back.png">
+              <source media="(max-width: 800px)" srcset="./images/back-mobile.png">
+              <img class="background background--back " src="./images/back.png" alt="">
             </picture>
-            <img class="background background--dude lazyload" data-src="./images/dude.png">
+            <picture>
+              <source media="(max-width: 800px)" srcset="./images/dude-mobile.png">
+              <img class="background background--dude " src="./images/dude.png" alt="">
+            </picture>
 
-            <img class="background background--name lazyload" data-src="./images/name.png">
+            <img class="background background--name " src="./images/name.png" alt="">
 
           </div>
           <div class="section__content">
@@ -66,9 +57,17 @@
               </div>
             </div>
 
-            <div class="play">
+            <div class="about--call js-modal" data-call-modal="about"><img width="25" class="about--call__info" src="./images/info.png" alt=""></div>
+
+
+            <div class="play js-modal" data-call-modal="video">
               <div class="play__background"></div>
               <div class="play__text">Смотреть видео</div>
+            </div>
+
+            <div class="info">
+              <div class="info__period">Сроки проведения проекта с XX.03.2017 г. по 01.07.2017 г.  </div>
+              <div class="info__rules"><a href="#" title="">Правила участия</a> и <a href="#" title="">вопросы-ответы</a></div>
             </div>
 
           </div>
@@ -76,6 +75,8 @@
       </div>
       <ul class="navigation-dots">
         <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
         <li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>
       </ul>
     </main>
